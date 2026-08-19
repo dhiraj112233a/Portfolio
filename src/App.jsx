@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import './App.css'
+import resume from './assets/Resume.pdf'
+
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -174,8 +176,8 @@ function App() {
         </nav>
 
         <div className="nav-actions">
-          <a className="resume-btn" href="#resume">
-            Resume
+          <a className="resume-btn" href={resume} download='resume'>
+            Download Resume
           </a>
           <button
             type="button"
