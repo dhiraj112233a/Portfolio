@@ -269,6 +269,9 @@ function App() {
 
 
           <div className="hero-visual">
+            <div data-aos="flip-left"
+            data-aos-easing="ease-out-cubic"
+            data-aos-duration="2000">
             <div className="profile-card glass-card">
               <img src={myPhoto} alt="Dhiraj Dalvi" loading="eager" />
               <div className="profile-overlay">
@@ -279,6 +282,7 @@ function App() {
             <div className="floating-badge badge-one">React</div>
             <div className="floating-badge badge-two">Python</div>
             <div className="floating-badge badge-three">SQL</div>
+          </div>
           </div>
         </section>
 
