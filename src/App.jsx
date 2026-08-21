@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import './App.css'
 import resume from './assets/Resume.pdf'
-
+import myPhoto from './assets/myphoto.jpeg'
+import weatherImage from './assets/weather.png'
+import precoffee from './assets/precoffee.png'
+import foodie from './assets/foodie.png'
 
 const navItems = [
   { label: 'Home', href: '#home' },
@@ -21,14 +24,10 @@ const skills = [
   'Vite',
   'Python',
   'Node.js',
-  'Express.js',
   'MySQL',
   'Git & GitHub',
   'Power BI',
   'APIs',
-  'ERP Systems',
-  'UI/UX',
-  'REST APIs',
 ]
 
 const experiences = [
@@ -39,7 +38,10 @@ const experiences = [
     description:
       'Built and maintained responsive business applications, dashboards, and client portals using React, Node.js, and MySQL.',
     technologies: ['React', 'Node.js', 'MySQL', 'REST API'],
-    achievements: ['Reduced manual reporting time by 40%', 'Improved user experience across client dashboards'],
+    achievements: [
+      'Reduced manual reporting time by 40%',
+      'Improved user experience across client dashboards',
+    ],
   },
   
 ]
@@ -50,7 +52,8 @@ const education = [
     college: 'Dr. Babasaheb Ambedkar College Aundh , Pune',
     year: '2023 - 2026',
     score: '7.33 CGPA',
-    detail: 'Developed a strong foundation in programming, databases, web development, and computer applications. Currently expanding my technical skills through Full Stack Development and Data Analysis, with a focus on building practical, real-world projects.',
+    detail:
+      'Developed a strong foundation in programming, databases, web development, and computer applications. Currently expanding my technical skills through Full Stack Development and Data Analysis, with a focus on building practical, real-world projects.',
   },
   
 ]
@@ -58,29 +61,40 @@ const education = [
 const projects = [
   {
     name: 'Weather App',
-    image:
-      'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80',
-    description: 'A responsive weather application developed using HTML, CSS, and JavaScript that fetches real-time weather information through a weather API. Users can search for a city and view its current weather conditions in a simple and user-friendly interface.',
-    features: ['City-based weather search', 'Humidity information', 'Weather condition' , 'Real-time weather data'],
+    image: weatherImage,
+    description:
+      'A responsive weather application developed using HTML, CSS, and JavaScript that fetches real-time weather information through a weather API. Users can search for a city and view its current weather conditions in a simple and user-friendly interface.',
+    features: [
+      'City-based weather search',
+      'Humidity information',
+      'Weather condition',
+      'Real-time weather data',
+    ],
     tech: ['HTML', 'CSS', 'JavaScript'],
-    github: '#',
-    demo: '#',
+    github: 'https://github.com/dhiraj112233a/Weather-App',
+    demo: 'https://weather-5pntogzco-dhiraj14.vercel.app/',
   },
   {
     name: 'Premium Coffee Website',
-    image:
-      'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=900&q=80',
-    description: 'A modern and responsive Premium Coffee website developed using React and Vite, designed to provide an engaging and visually appealing coffee shop experience. The website showcases premium coffee products, categories, and shop information through reusable React components with a clean and user-friendly interface.',
-    features: ['Premium Coffee Showcase', 'Responsive Home Page', 'Responsive Design' , 'Coffee Menu'],
-    tech: ['React.js', 'Vite', 'JavaScript' , 'HTML'],
-    github: '#',
-    demo: '#',
+    image: precoffee,
+    description:
+      'A modern and responsive Premium Coffee website developed using React and Vite, designed to provide an engaging and visually appealing coffee shop experience. The website showcases premium coffee products, categories, and shop information through reusable React components with a clean and user-friendly interface.',
+    features: [
+      'Premium Coffee Showcase',
+      'Responsive Home Page',
+      'Responsive Design',
+      'Coffee Menu',
+    ],
+    tech: ['React.js', 'Vite', 'JavaScript', 'HTML'],
+    github: 'https://github.com/dhiraj112233a/Premium-Coffee',
+    demo: 'https://premium-coffee-seven.vercel.app/',
   },
   {
     name: 'Netflix Clone App',
     image:
       'https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=900&q=80',
-    description: 'A responsive Netflix Clone developed to replicate the core look and feel of a modern streaming platform. The application features a movie and TV-show browsing interface with categorized content, attractive banners, movie cards, and an interactive user experience.',
+    description:
+      'A responsive Netflix Clone developed to replicate the core look and feel of a modern streaming platform. The application features a movie and TV-show browsing interface with categorized content, attractive banners, movie cards, and an interactive user experience.',
     features: ['Movie & TV Show Showcase', 'Responsive Design', 'Netflix-inspired UI'],
     tech: ['React', 'CSS', 'APIs'],
     github: '#',
@@ -88,69 +102,89 @@ const projects = [
   },
   {
     name: 'Foodie Application',
-    image:
-      'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=80',
-    description: 'Foodie is a modern and responsive food delivery web application developed using React.js and Vite. The application provides users with an attractive platform to explore food categories, discover popular dishes, and navigate through login and registration pages. It uses reusable React components and React Router for smooth navigation between different pages.',
+    image: foodie,
+    description:
+      'Foodie is a modern and responsive food delivery web application developed using React.js and Vite. The application provides users with an attractive platform to explore food categories, discover popular dishes, and navigate through login and registration pages. It uses reusable React components and React Router for smooth navigation between different pages.',
     features: ['Responsive Home Page', 'Popular Foods', 'Modern Food-Delivery UI'],
-    tech: ['HTML', 'CSS', 'JavaScript'],
-    github: '#',
-    demo: '#',
+    tech: ['React.js', 'Vite', 'JavaScript'],
+    github: 'https://github.com/dhiraj112233a/Responsive-Foodie-Project',
+    demo: 'https://responsive-foodie-project.vercel.app/',
   },
 ]
 
 const services = [
-  'Website Development',
-  'Web Application Development',
-  'ERP Development',
-  'React Development',
-  'Backend Development',
+  'Frontend Web Development',
+  'React.js Development',
+  'Responsive Website Development',
+  'Full Stack Web Development',
   'Python Development',
-  'Dashboard Development',
-  'API Development',
+  'SQL & Database Management',
+  'Data Analysis & Visualization',
+  'Power BI Dashboard Development',
+  'API Integration',
 ]
 
 const certificates = [
   'Full Stack Web Development',
-  'Python for Data & Automation',
-  'Power BI Fundamentals',
-  'JavaScript Basic Concepts',
+  'Python for Data Analysis',
+  'Power BI & Data Visualization',
+  'SQL & Database Management',
+  'React.js & Frontend Development',
+  'JavaScript Fundamentals',
 ]
 
 const testimonials = [
   {
     name: 'Sahil Talape',
     role: 'Client',
-    quote: 'The interface was modern, smooth, and highly user-friendly. It delivered exactly what we needed for our business workflow.',
+    quote:
+      'The interface was modern, smooth, and highly user-friendly. It delivered exactly what we needed for our business workflow.',
   },
   {
     name: 'Rohit Sharma',
     role: 'Project Manager',
-    quote: 'Great communication, strong technical execution, and consistent delivery. The project quality was excellent from start to finish.',
+    quote:
+      'Great communication, strong technical execution, and consistent delivery. The project quality was excellent from start to finish.',
   },
   {
     name: 'Neha Verma',
     role: 'Student Mentor',
-    quote: 'A thoughtful developer who understands design, user behavior, and technical problem solving in equal measure.',
+    quote:
+      'A thoughtful developer who understands design, user behavior, and technical problem solving in equal measure.',
   },
 ]
 
 const githubStats = [
-  { value: '50+', label: 'Repositories' },
+  { value: '15+', label: 'Repositories' },
   { value: '10k+', label: 'Lines of Code' },
-  { value: '30+', label: 'Projects Delivered' },
+  { value: '15+', label: 'Projects Delivered' },
   { value: '85%', label: 'Code Quality' },
 ]
 
 const contactLinks = [
-  { label: 'Email', value: 'dhirajdalvi2005@gmail.com', href: 'dhirajdalvi2005@gmail.com' },
-  { label: 'LinkedIn', value: 'https://www.linkedin.com/in/dhiraj-dalvi-bbb347425', href: 'https://www.linkedin.com/in/dhiraj-dalvi-bbb347425' },
-  { label: 'GitHub', value: 'https://github.com/dhiraj112233a', href: 'https://github.com/dhiraj112233a' },
+  {
+    label: 'Email',
+    value: 'dhirajdalvi2005@gmail.com',
+    href: 'mailto:dhirajdalvi2005@gmail.com',
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/dhiraj-dalvi',
+    href: 'https://www.linkedin.com/in/dhiraj-dalvi-bbb347425',
+  },
+  {
+    label: 'GitHub',
+    value: 'github.com/dhiraj112233a',
+    href: 'https://github.com/dhiraj112233a',
+  },
 ]
 
 const resumePoints = [
-  'Career summary and project-driven experience',
-  'Technical skills across frontend and backend',
-  'Business process and automation expertise',
+  'Full Stack Web Development using React, JavaScript, Python, and SQL',
+  'Responsive and user-friendly web application development',
+  'Data analysis and visualization using Python, SQL, and Power BI',
+  'Experience building practical projects with APIs and databases',
+  'Strong foundation in frontend development, backend programming, and problem solving',
 ]
 
 function App() {
@@ -162,7 +196,7 @@ function App() {
         <div className="brand-wrap">
           <div className="brand-mark">D</div>
           <div>
-            <span className="brand-name">Dhiraj</span>
+            <span className="brand-name">Dhiraj Dalvi</span>
             <span className="brand-role">Student</span>
           </div>
         </div>
@@ -176,13 +210,14 @@ function App() {
         </nav>
 
         <div className="nav-actions">
-          <a className="resume-btn" href={resume} download='resume'>
+          <a className="resume-btn" href={resume} download="Dhiraj-Dalvi-Resume.pdf">
             Download Resume
           </a>
           <button
             type="button"
             className="menu-toggle"
             aria-label="Toggle menu"
+            aria-expanded={menuOpen}
             onClick={() => setMenuOpen((value) => !value)}
           >
             <span />
@@ -195,14 +230,15 @@ function App() {
       <main>
         <section className="hero section" id="home">
           <div className="hero-copy">
-            <span className="hero-badge">Available for freelance & full-time roles</span>
+            <span className="hero-badge">Available for freelance &amp; full-time roles</span>
             <h1>
-              Hi, I&apos;m <span>Dhiraj</span>
+              Hi, I&apos;m <span>Dhiraj Dalvi</span>
               <br />
               Full Stack Developer
             </h1>
             <p className="lead">
-              I design and build responsive web experiences, business systems, and data-driven interfaces that help companies grow.
+              I design and build responsive web experiences, business systems, and
+              data-driven interfaces that help companies grow.
             </p>
 
             <div className="cta-row">
@@ -215,26 +251,34 @@ function App() {
             </div>
 
             <div className="socials" aria-label="Social links">
-              <a href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-              <a href="https://dribbble.com" target="_blank" rel="noreferrer">Dribbble</a>
+              <a href="https://github.com/dhiraj112233a" target="_blank" rel="noreferrer">
+                GitHub
+              </a>
+              <a
+                href="https://www.linkedin.com/in/dhiraj-dalvi-bbb347425"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
             </div>
           </div>
 
+
+
+
+
           <div className="hero-visual">
             <div className="profile-card glass-card">
-              <img
-                src = "./images/myphoto.jpeg"
-                alt="Profile portrait"
-              />
+              <img src={myPhoto} alt="Dhiraj Dalvi" loading="eager" />
               <div className="profile-overlay">
-                <span> </span>
-                <strong>Full Stack Developer</strong>
+                <span>Based in Pune, India</span>
+                <strong>Student &amp; Developer</strong>
               </div>
             </div>
             <div className="floating-badge badge-one">React</div>
             <div className="floating-badge badge-two">Python</div>
-            <div className="floating-badge badge-three">Mongo db</div>
+            <div className="floating-badge badge-three">SQL</div>
           </div>
         </section>
 
@@ -247,26 +291,47 @@ function App() {
           <div className="about-grid">
             <div className="about-copy glass-card">
               <p>
-                I am a passionate developer focused on crafting elegant, efficient, and business-friendly digital products. My work blends frontend design, backend logic, and scalable architecture to deliver solutions that look strong and perform reliably.
+                I am a BBA (Computer Application) graduate with a strong interest in Full
+                Stack Web Development and Data Analysis. I am currently developing my
+                skills in frontend technologies such as HTML, CSS, JavaScript, and
+                React.js, along with backend development using Python and database
+                management with SQL.
               </p>
               <p>
-                My career objective is to create meaningful technology experiences that improve operational efficiency, deliver measurable value, and help businesses grow with confidence.
+                I enjoy building responsive, user-friendly web applications and working on
+                practical projects that help me strengthen my technical and problem-solving
+                skills. I am also exploring data analysis and visualization using Python,
+                SQL, and Power BI.
+              </p>
+              <p>
+                My goal is to continuously learn new technologies, gain practical industry
+                experience, and build efficient digital solutions that combine technology,
+                creativity, and business understanding.
               </p>
             </div>
 
             <div className="about-points glass-card">
-              <h3>What I do</h3>
+              <h3>Interests</h3>
               <ul>
-                <li>Design and develop responsive websites</li>
-                <li>Build business dashboards and ERP modules</li>
-                <li>Create scalable backend APIs and integrations</li>
-                <li>Turn complex processes into clean user experiences</li>
+                <li>Full-Stack Web Application Development</li>
+                <li>Exploring new frameworks and libraries</li>
+                <li>Watching tech &amp; coding videos</li>
+                <li>Exploring AI &amp; Emerging Technologies</li>
+                <li>Problem Solving</li>
+                <li>Gaming &amp; Technology</li>
               </ul>
             </div>
           </div>
 
           <div className="strengths-grid">
-            {['Problem Solving', 'Communication', 'Ownership', 'Adaptability', 'Clean Coding', 'Business Thinking'].map((item) => (
+            {[
+              'Problem Solving',
+              'Communication',
+              'Ownership',
+              'Adaptability',
+              'Clean Coding',
+              'Business Thinking',
+            ].map((item) => (
               <div className="strength-pill glass-card" key={item}>
                 {item}
               </div>
@@ -349,7 +414,12 @@ function App() {
           <div className="project-grid">
             {projects.map((project) => (
               <article className="project-card glass-card" key={project.name}>
-                <img src={project.image} alt={project.name} />
+                <img
+                  src={project.image}
+                  alt={`${project.name} preview`}
+                  loading="lazy"
+                  decoding="async"
+                />
                 <div className="project-body">
                   <h3>{project.name}</h3>
                   <p>{project.description}</p>
@@ -364,8 +434,12 @@ function App() {
                     ))}
                   </div>
                   <div className="project-links">
-                    <a href={project.github} target="_blank" rel="noreferrer">GitHub</a>
-                    <a href={project.demo} target="_blank" rel="noreferrer">Live Demo</a>
+                    <a href={project.github} target="_blank" rel="noreferrer">
+                      GitHub
+                    </a>
+                    <a href={project.demo} target="_blank" rel="noreferrer">
+                      Live Demo
+                    </a>
                   </div>
                 </div>
               </article>
@@ -391,7 +465,7 @@ function App() {
         <section className="section" id="certificates">
           <div className="section-heading">
             <span className="eyebrow">Certifications</span>
-            <h2>Achievements & training</h2>
+            <h2>Achievements &amp; training</h2>
           </div>
 
           <div className="cert-grid">
@@ -423,7 +497,7 @@ function App() {
         <section className="section" id="testimonials">
           <div className="section-heading">
             <span className="eyebrow">Testimonials</span>
-            <h2>Feedback from clients & teams</h2>
+            <h2>Feedback from clients &amp; teams</h2>
           </div>
 
           <div className="testimonial-grid">
@@ -456,7 +530,16 @@ function App() {
               </div>
               <div className="resume-meta">
                 <p>Career Summary</p>
-                <p>Experienced in web development, ERP solutions, and dashboard systems with a strong focus on user-centered design.</p>
+                <p>
+                  BBA (Computer Application) graduate with a strong interest in Full Stack
+                  Web Development and Data Analysis. Skilled in HTML, CSS, JavaScript,
+                  React.js, Python, and SQL, with a growing understanding of Power BI and
+                  data visualization. Passionate about building responsive web
+                  applications, analyzing data, solving problems, and continuously learning
+                  new technologies. Seeking an opportunity to apply my technical and
+                  business knowledge in a professional environment while contributing to
+                  real-world projects and growing as a developer.
+                </p>
               </div>
             </div>
 
@@ -467,7 +550,11 @@ function App() {
                   <li key={point}>{point}</li>
                 ))}
               </ul>
-              <a href="/resume.pdf" className="btn btn-primary" download>
+              <a
+                href={resume}
+                className="btn btn-primary"
+                download="Dhiraj-Dalvi-Resume.pdf"
+              >
                 Download Resume
               </a>
             </div>
@@ -483,14 +570,24 @@ function App() {
           <div className="contact-grid">
             <form className="contact-form glass-card">
               <div className="field-row">
-                <input type="text" placeholder="Name" aria-label="Name" />
-                <input type="email" placeholder="Email" aria-label="Email" />
+                <input type="text" name="name" placeholder="Name" aria-label="Name" />
+                <input type="email" name="email" placeholder="Email" aria-label="Email" />
               </div>
               <div className="field-row">
-                <input type="tel" placeholder="Phone" aria-label="Phone" />
-                <input type="text" placeholder="Subject" aria-label="Subject" />
+                <input type="tel" name="phone" placeholder="Phone" aria-label="Phone" />
+                <input
+                  type="text"
+                  name="subject"
+                  placeholder="Subject"
+                  aria-label="Subject"
+                />
               </div>
-              <textarea rows="5" placeholder="Message" aria-label="Message" />
+              <textarea
+                rows="5"
+                name="message"
+                placeholder="Message"
+                aria-label="Message"
+              />
               <button type="submit" className="btn btn-primary">
                 Send Message
               </button>
@@ -499,7 +596,12 @@ function App() {
             <div className="contact-panel glass-card">
               <div className="contact-list">
                 {contactLinks.map((item) => (
-                  <a key={item.label} href={item.href} target={item.href.startsWith('http') ? '_blank' : undefined} rel={item.href.startsWith('http') ? 'noreferrer' : undefined}>
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                  >
                     <span>{item.label}</span>
                     <strong>{item.value}</strong>
                   </a>
@@ -531,8 +633,16 @@ function App() {
         </div>
 
         <div className="footer-socials">
-          <a href="https://github.com/dhiraj112233a" target="_blank" rel="noreferrer">GitHub</a>
-          <a href="http://www.linkedin.com/in/dhiraj-dalvi-bbb347425" target="_blank" rel="noreferrer">LinkedIn</a>
+          <a href="https://github.com/dhiraj112233a" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/dhiraj-dalvi-bbb347425"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn
+          </a>
         </div>
 
         <p>© 2026 Dhiraj. All rights reserved.</p>
